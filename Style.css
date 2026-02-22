@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+/* Navigation */
+.heroSection{
+    /* background-image: url(Images/Img1.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    background-blend-mode: darken;
+    transition: background-image 2s ease-in;
+    height: 480px;
+} 
+#Website-logo{
+    width: 60px;
+}
+#links{
+    margin-top: 20px;
+}
+#links a{
+    text-decoration: none;
+    color: white;
+    margin: 0px 8px;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid transparent;
+    font-weight: 500;
+}
+#links a:hover{
+    opacity: 100%;
+    border-color: white;
+}
+.linkSelected{
+    background-color: #d5e4ff;
+    opacity: 70%;
+    color: black;
+}
+#Navbar{
+    padding: 30px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+/* Hero section  */
+#heroBody{
+    margin-top: 100px;
+    text-align: center;
+}
+#heroBody #heroHeading h2{
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+}
+#heroBody #heroParagraph p{
+    color: white;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+}
+#heroBody #technicianBtn{
+    margin-top: 40px;
+}
+#technicianBtn{
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #e7e8e9;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    animation: MoveleftRight 1s ease infinite alternate;
+}
+@keyframes MoveleftRight{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(-10px);
+    }
+}
+#technicianBtn:hover{
+    background-color: #e9eaeb;
+    opacity: 70%;
+}
+/* Icon Section  */
+#image {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+}
+#image span{
+    text-align: center;
+}
+#image img{
+    width: 90px;
+    margin: 0px 60px;
+}
+#image span p{
+    margin: 6px;
+    font-weight: 500;
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+}
+
