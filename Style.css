@@ -34,11 +34,6 @@ body{
     opacity: 100%;
     border-color: white;
 }
-.linkSelected{
-    background-color: #d5e4ff;
-    opacity: 70%;
-    color: black;
-}
 #Navbar{
     padding: 30px 50px 0px 50px;
     display: flex;
@@ -105,4 +100,36 @@ body{
     font-weight: 500;
     font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
 }
-
+/* Maps Section */
+/* Navigation bar */
+#maps-navBar{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+#mapsWebsite-logo{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+#maps-navBar a{
+    text-decoration: none;
+    color: white;
+    margin: 0px 8px;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid transparent;
+    font-weight: 500;
+}
+#maps-navBar a:hover{
+    opacity: 100%;
+    border-color: white;
+}
+#maps-links{
+    margin-top: 10px;
+}
+#maps-Navigation{
+    padding: 30px 50px 0px 50px;
+    background-image: url(Images/Img1.jpg);
+}
