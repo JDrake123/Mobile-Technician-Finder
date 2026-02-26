@@ -133,3 +133,23 @@ body{
     padding: 30px 50px 0px 50px;
     background-image: url(Images/Img1.jpg);
 }
+/* Title section */
+#map-title{
+    text-align: center;
+    margin-top: 20px;
+    animation: MoveleftRight 1s ease infinite alternate;
+}
+#maps-title{
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    color: #2aa0cd;
+}
+@keyframes MoveleftRight{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(-10px);
+    }
+}
+
