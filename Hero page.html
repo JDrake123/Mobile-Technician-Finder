@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c61a0110d8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style.css">
     <script src="App.js" defer></script>
+    <script src="Maps.js" defer></script>
     <title>Phone Repair</title>
 </head>
+
 <body>
     <section class="heroSection">
         <!-- Navigation -->
@@ -15,36 +18,125 @@
             <img src="Icons/Website logo.png" id="Website-logo">
             <span id="links">
                 <a href="#" class="link">Home</a>
-                <a href="Maps.html" target="_self"    class="link">Maps</a>
-                <a href="#" class="link">Pricing</a>
-                <a href="#" class="link">Contact</a>
+                <a href="#map-title" class="link">Map</a>
+                <a href="#Price-Estimator" class="link">Pricing</a>
+                <a href="#Contacts-section" class="link">Contact</a>
             </span>
         </div>
         <!-- Hero section -->
         <div id="heroBody">
             <span id="heroHeading">
-               <h2>Find a mobile technician near you</h2>
+                <h2>Find a mobile technician near you</h2>
             </span>
             <span id="heroParagraph">
-               <p>It has never been simpler to find a mobile technician near you with just a click of a button</p>
+                <p>It has never been simpler to find a mobile technician near you with just a click of a button</p>
             </span>
-            <button id="technicianBtn">Find Technician <i class="fa-solid fa-arrow-right"></i></button>
+            <a href="#map-title"><button id="technicianBtn">Find Technician <i
+                        class="fa-solid fa-arrow-right"></i></button></a>
         </div>
     </section>
     <!-- Icon Section -->
-        <div id="image">
-            <span>
-                <img src="Icons/Phone repair icon.png" alt="Phone image">
-                <p style="margin-right: 20px;">Phones</p>
-            </span>
-            <span>
-                <img src="Icons/Tablet repair icon.png" alt="Tablet image">
-                <p>Tablets</p>
-            </span>
-            <span>
-                <img src="Icons/Laptop repair icon4.png" alt="Laptop image">
-                <p>Laptops</p>
-            </span>
+    <div id="image">
+        <span>
+            <img src="Icons/Phone repair icon.png" alt="Phone image">
+            <p style="margin-right: 20px;">Phones</p>
+        </span>
+        <span>
+            <img src="Icons/Tablet repair icon.png" alt="Tablet image">
+            <p>Tablets</p>
+        </span>
+        <span>
+            <img src="Icons/Laptop repair icon4.png" alt="Laptop image">
+            <p>Laptops</p>
+        </span>
+    </div>
+    <!-- Title section -->
+    <section id="map-title">
+        <span id="maps-title">See which mobile technician is near you</span>
+    </section>
+    <!-- Maps Section -->
+    <section id="Maps">
+        <div id="Map"></div>
+    </section>
+        <!-- Contacts -->
+    <section id="Contacts-section">
+        <div class="tech-directory">
+            <div class="header-section">
+                <h1>
+                    <span>🔧</span> Mobile Technician Info
+                </h1>
+                <p>Connect with trusted phone repair specialists • workshop info & repair services</p>
+            </div>
+    
+            <!-- filter & search section -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search by workshop, technician or location...">
+                </div>
+                <div class="repair-filter">
+                    <span class="filter-icon">🛠️</span>
+                    <select id="repairTypeFilter">
+                        <option value="all">All repair types</option>
+                        <option value="screen">Broken Screen</option>
+                        <option value="battery">Battery</option>
+                        <option value="charging">Charging Port</option>
+                        <option value="water">Water Damage</option>
+                        <option value="software">Software Issues</option>
+                        <option value="camera">Camera Repair</option>
+                        <option value="audio">Speaker/Mic</option>
+                        <option value="motherboard">Motherboard</option>
+                    </select>
+                </div>
+            </div>
+    
+            <!-- technicians grid injected -->
+            <div id="technicianGrid" class="technician-grid"></div>
+            <footer>
+                📍 Verified local technicians • Contact them directly for quotes & warranty info
+            </footer>
         </div>
+    </section>
+    <!-- Pricing Estimater -->
+    <div id="Price-Estimator">
+        <div class="estimator-card">
+            <div class="card-header">
+                <h1>
+                    📱 Phone Repair Price Estimator
+                    <span>UGX</span>
+                </h1>
+                <p>Select brand & issue → Instant price + Estimated time</p>
+            </div>
+            <div class="card-content">
+                <div class="input-group">
+                    <label>🔧 Phone brand</label>
+                    <select id="brandSelect" aria-label="Select phone brand"></select>
+                </div>
+                <div class="input-group">
+                    <label>⚠️ What's broken?</label>
+                    <select id="issueSelect" aria-label="Select repair issue"></select>
+                </div>
+
+                <div class="result-panel" id="resultPanel">
+                    <div class="price-box">
+                        <span class="price-label">💰 ESTIMATED REPAIR COST</span>
+                        <span class="price-value" id="priceDisplay">— UGX</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-label">⏱️ TURNAROUND TIME</span>
+                        <span class="time-value" id="timeDisplay">—</span>
+                    </div>
+                    <div class="note">
+                        ⚡ Note that this price may vary based on the mobile technician <br>
+                        💰 Currency: <strong>Ugandan Shillings (UGX)</strong>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                🛠️ Estimates based on real repair data | Prices may vary by location & part availability
+            </footer>
+        </div>
+    </div>
 </body>
+
 </html>
