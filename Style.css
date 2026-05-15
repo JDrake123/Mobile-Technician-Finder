@@ -635,3 +635,68 @@ footer {
     font-size: 1.5rem;
   }
 }
+/* Footer */
+.Footer{
+    padding: 50px 100px 50px 100px;
+    background-color: #296679;
+    font-family: Inter;
+}
+.Footer-body{
+    font-family: Inter;
+}
+.Footer-content h2{
+    font-size: 15px;
+    font-family: "Edu NSW ACT Cursive";
+    margin-bottom: 100px;
+}
+.Footer-body{
+    display: flex;
+    justify-content: space-between;
+}
+.fa-brands.fa-facebook{
+    color: hsl(240, 60%, 48%);
+}
+.fa-brands.fa-linkedin{
+    color: hsl(240, 75%, 41%);
+}
+.fa-brands.fa-youtube{
+    color: hsl(0, 91%, 56%);
+}
+.fa-brands.fa-instagram{
+    color: hsl(345, 82%, 70%);
+}
+.Footer-content1{
+    line-height: 30px;
+}
+.Footer-content2{
+    line-height: 30px;
+}
+.Footer-content3{
+    line-height: 30px;
+}
+.Footer-content1 p{
+    font-size: 15px;
+    color: grey;
+}
+.Footer-content2 p{
+    font-size: 15px;
+    color: grey;
+}
+.Footer-content3 p{
+    font-size: 15px;
+    color: grey;
+}
+.Footer-content1 p:hover{
+     color: white;
+     cursor: pointer;
+     
+}
+.Footer-content2 p:hover{
+     color: white;
+     cursor: pointer;
+
+}
+.Footer-content3 p:hover{
+     color: white;
+     cursor: pointer;
+}
