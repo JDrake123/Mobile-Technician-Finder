@@ -147,7 +147,7 @@ function computeFinalPrice(brandName, issueId) {
   const baseCost = issueBaseCostMap.get(issueId);
   if (baseCost === undefined) return 0;
   const brandFactor = getBrandFactor(brandName);
-  const rawPrice = baseCost * brandFactor * 4;
+  const rawPrice = baseCost * brandFactor * 3;
   return Math.round(rawPrice);
 }
 

@@ -55,48 +55,48 @@
         <span id="maps-title">See which mobile technician is near you</span>
     </section>
     <!-- Maps Section -->
-    <section id="Maps">
-        <div id="Map"></div>
-    </section>
-    <!-- Contacts -->
-    <section id="Contacts-section">
-        <div class="tech-directory">
-            <div class="header-section">
-                <h1>
-                    <span>🔧</span> Mobile Technician Info
-                </h1>
-                <p>Connect with trusted phone repair specialists • workshop info & repair services</p>
-            </div>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <header>
+                <h1>Phone Repair Services Near You</h1>
+                <p>
+                    Find nearby repair shops, choose a search radius, and get
+                    directions.
+                </p>
+            </header>
+            <div class="controls">
+                <div class="field">
+                    <label for="radius">Search Radius</label>
 
-            <!-- filter & search section -->
-            <div class="filter-bar">
-                <div class="search-box">
-                    <span>🔍</span>
-                    <input type="text" id="searchInput" placeholder="Search by workshop, technician or location...">
-                </div>
-                <div class="repair-filter">
-                    <span class="filter-icon">🛠️</span>
-                    <select id="repairTypeFilter">
-                        <option value="all">All repair types</option>
-                        <option value="screen">Broken Screen</option>
-                        <option value="battery">Battery</option>
-                        <option value="charging">Charging Port</option>
-                        <option value="water">Water Damage</option>
-                        <option value="software">Software Issues</option>
-                        <option value="camera">Camera Repair</option>
-                        <option value="audio">Speaker/Mic</option>
-                        <option value="motherboard">Motherboard</option>
+                    <select id="radius">
+                        <option value="1000">1 KM</option>
+                        <option value="3000" selected>3 KM</option>
+                        <option value="5000">5 KM</option>
+                        <option value="10000">10 KM</option>
+                        <option value="20000">20 KM</option>
                     </select>
                 </div>
+
+                <button id="searchBtn">Find Nearby Services</button>
             </div>
 
-            <!-- technicians grid injected -->
-            <div id="technicianGrid" class="technician-grid"></div>
-            <footer>
-                📍 Verified local technicians • Contact them directly for quotes & warranty info
-            </footer>
-        </div>
-    </section>
+            <div id="status" class="status">Allow location access to begin.</div>
+
+            <div id="results" class="results">
+                <div class="empty">Nearby repair shops will appear here.</div>
+            </div>
+        </aside>
+
+        <!-- Map -->
+        <section class="map-wrapper">
+            <div class="map-badge">Google Maps • Nearby Repair Services</div>
+
+            <div id="map"></div>
+        </section>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMsFCedhkLNbv-uYzjO6vxLCmgylfC0e8
+    &callback=initMap&v=weekly"></script>
+    </div>
     <!-- Pricing Estimater -->
     <div id="Price-Estimator">
         <div class="estimator-card">
