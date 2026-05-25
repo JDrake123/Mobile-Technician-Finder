@@ -63,6 +63,7 @@ body{
 }
 #technicianBtn{
     font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
     padding: 10px;
     font-size: 15px;
     background-color: #e7e8e9;
