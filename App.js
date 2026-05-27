@@ -19,6 +19,181 @@ function changeBackgroundImage() {
 setInterval(changeBackgroundImage, 3500);
 window.onload = changeBackgroundImage();
 
+// Contact Section
+const technicians = [
+  {
+    name: "Brian Mobile Fix",
+    email: "brianfix@gmail.com",
+    phone: "+256 700 123 456",
+    repairs: [
+      "Screen Replacement",
+      "Battery Replacement",
+      "Charging Port Repair",
+    ],
+    location: "Kampala Central, Uganda",
+  },
+  {
+    name: "Smart Repair Hub",
+    email: "info@smartrepairhub.com",
+    phone: "+256 781 555 230",
+    repairs: ["Water Damage Repair", "Software Problems", "Data Recovery"],
+    location: "Nansana, Wakiso",
+  },
+  {
+    name: "QuickTech Services",
+    email: "quicktechservices@gmail.com",
+    phone: "+256 774 908 112",
+    repairs: ["Camera Repair", "Speaker Repair", "Microphone Issues"],
+    location: "Mbarara City",
+  },
+  {
+    name: "Elite Phone Doctors",
+    email: "elitedoctors@yahoo.com",
+    phone: "+256 712 334 890",
+    repairs: ["Screen Replacement", "Battery Replacement", "Power Issues"],
+    location: "Jinja Town",
+  },
+  {
+    name: "FixPro Mobile Center",
+    email: "contact@fixpromobile.com",
+    phone: "+256 760 223 901",
+    repairs: [
+      "Charging Port Repair",
+      "Software Problems",
+      "Unlocking Services",
+    ],
+    location: "Gulu City",
+  },
+  {
+    name: "TechCare Solutions",
+    email: "support@techcareug.com",
+    phone: "+256 753 445 120",
+    repairs: ["Screen Replacement", "Camera Repair", "Face ID Repair"],
+    location: "Mukono",
+  },
+  {
+    name: "Phone Rescue Uganda",
+    email: "rescuephones@gmail.com",
+    phone: "+256 701 889 332",
+    repairs: ["Battery Replacement", "Water Damage Repair", "Speaker Repair"],
+    location: "Entebbe",
+  },
+  {
+    name: "Digital Mobile Experts",
+    email: "digitalexperts@yahoo.com",
+    phone: "+256 785 661 777",
+    repairs: ["Software Problems", "Data Recovery", "Unlocking Services"],
+    location: "Masaka",
+  },
+  {
+    name: "Prime Gadget Repair",
+    email: "primegadgets@gmail.com",
+    phone: "+256 750 992 188",
+    repairs: ["Charging Port Repair", "Microphone Issues", "Power Issues"],
+    location: "Fort Portal",
+  },
+  {
+    name: "Galaxy Phone Clinic",
+    email: "galaxyclinic@repairmail.com",
+    phone: "+256 709 774 552",
+    repairs: ["Screen Replacement", "Battery Replacement", "Software Problems"],
+    location: "Mbale",
+  },
+];
+
+const filterSelect = document.getElementById("repairFilter");
+const technicianGrid = document.getElementById("technicianGrid");
+const resultCount = document.getElementById("resultCount");
+
+function getUniqueRepairs() {
+  const repairs = new Set();
+
+  technicians.forEach((tech) => {
+    tech.repairs.forEach((repair) => {
+      repairs.add(repair);
+    });
+  });
+
+  return [...repairs].sort();
+}
+
+function populateFilter() {
+  const repairs = getUniqueRepairs();
+
+  repairs.forEach((repair) => {
+    const option = document.createElement("option");
+
+    option.value = repair;
+    option.textContent = repair;
+
+    filterSelect.appendChild(option);
+  });
+}
+
+function renderTechnicians(filterValue = "all") {
+  technicianGrid.innerHTML = "";
+
+  const filteredTechnicians = technicians.filter((tech) => {
+    if (filterValue === "all") {
+      return true;
+    }
+
+    return tech.repairs.includes(filterValue);
+  });
+
+  resultCount.textContent = `${filteredTechnicians.length} technician(s) found`;
+
+  if (filteredTechnicians.length === 0) {
+    technicianGrid.innerHTML = `
+      <div class="empty">
+        No technicians found for this repair type.
+      </div>
+    `;
+
+    return;
+  }
+
+  filteredTechnicians.forEach((tech) => {
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="name">${tech.name}</div>
+
+      <div class="badge">
+        Mobile Phone Technician
+      </div>
+
+      <div class="info">
+        <div><span>Email:</span> ${tech.email}</div>
+
+        <div><span>Phone:</span> ${tech.phone}</div>
+
+        <div>
+          <span>Repairs:</span>
+          ${tech.repairs.join(", ")}
+        </div>
+      </div>
+
+      <div class="location">
+        <span>Location:</span> ${tech.location}
+      </div>
+    `;
+
+    technicianGrid.appendChild(card);
+  });
+}
+
+populateFilter();
+
+renderTechnicians();
+
+filterSelect.addEventListener("change", (e) => {
+  renderTechnicians(e.target.value);
+});
+
+
 // Pricing Estimate
 
 // 1. BRAND LIST (with factor multipliers)
@@ -213,300 +388,3 @@ function init() {
 
 init();
 
-// Contact Part
-// DATABASE OF MOBILE TECHNICIANS (workshops)
-const technicians = [
-  {
-    id: 1,
-    workshop: "iFix Masters Kampala",
-    technician: "Brian Wasswa",
-    phone: "+256 782 123 456",
-    email: "ifix@techcare.ug",
-    location: "Wandegeya, near Makerere",
-    repairs: [
-      "Broken Screen",
-      "Battery Replacement",
-      "Water Damage Repair",
-      "Charging Port Fix",
-      "Motherboard Repair",
-    ],
-  },
-  {
-    id: 2,
-    workshop: "Samsung & Apple Pro Center",
-    technician: "Aisha Nambi",
-    phone: "+256 701 987 654",
-    email: "aisha@prorepairs.ug",
-    location: "Kampala Road, Jubilee House",
-    repairs: [
-      "Broken Screen",
-      "Battery Issues",
-      "Software Troubleshooting",
-      "Camera Repair",
-      "Speaker Replacement",
-    ],
-  },
-  {
-    id: 3,
-    workshop: "Tecno/Infinix Care Hub",
-    technician: "Robert Kato",
-    phone: "+256 752 334 221",
-    email: "robert.k@phonemedic.ug",
-    location: "Nakivubo, near Ham Shopping",
-    repairs: [
-      "Charging Port",
-      "Screen Replacement",
-      "Battery Draining",
-      "Microphone Repair",
-      "Water Damage",
-    ],
-  },
-  {
-    id: 4,
-    workshop: "Uganda Phone Surgeons",
-    technician: "Grace Mutesi",
-    phone: "+256 789 112 233",
-    email: "grace@phonesurgeons.ug",
-    location: "Ntinda Complex, 2nd floor",
-    repairs: [
-      "Motherboard Repair",
-      "Broken Screen",
-      "Battery Not Charging",
-      "Software Boot Loop",
-      "Camera Issues",
-    ],
-  },
-  {
-    id: 5,
-    workshop: "Pixel & OnePlus Experts",
-    technician: "Derrick Ochieng",
-    phone: "+256 703 456 789",
-    email: "derrick@pixelex.ug",
-    location: "Acacia Mall, Kisementi",
-    repairs: [
-      "Display Replacement",
-      "Battery Calibration",
-      "Charging IC",
-      "Speaker Crackling",
-      "Water Damage Cleanup",
-    ],
-  },
-  {
-    id: 6,
-    workshop: "Mobile Medic - All Brands",
-    technician: "Patricia Namirembe",
-    phone: "+256 700 998 887",
-    email: "patty@mobilemedic.ug",
-    location: "Clock Tower, opposite Total",
-    repairs: [
-      "Broken Screen",
-      "Charging Port",
-      "Battery Fix",
-      "Audio Problems",
-      "Screen Ghost Touch",
-    ],
-  },
-  {
-    id: 7,
-    workshop: "Xiaomi & Realme Care",
-    technician: "Hussein Mukiibi",
-    phone: "+256 772 665 544",
-    email: "hussein@xiaomirep.ug",
-    location: "Kireka, Bweyogerere",
-    repairs: [
-      "Battery Replacement",
-      "Back Glass Repair",
-      "USB Port",
-      "Software Update Issues",
-      "Camera Blur",
-    ],
-  },
-  {
-    id: 8,
-    workshop: "QuickFix Phone Lab",
-    technician: "Shakira Nankya",
-    phone: "+256 758 777 333",
-    email: "contact@quickfix.ug",
-    location: "Makindye, Lukuli Road",
-    repairs: [
-      "Screen Repair",
-      "Microphone/Speaker",
-      "Motherboard Faults",
-      "Overheating Issues",
-      "Charging Problems",
-    ],
-  },
-  {
-    id: 9,
-    workshop: "Smartphone ER",
-    technician: "Emmanuel Okello",
-    phone: "+256 783 999 212",
-    email: "emma@smarter.ug",
-    location: "Najjanankumbi, near Zana",
-    repairs: [
-      "Water/Liquid Damage",
-      "Dead Boot Repair",
-      "Earpiece Not Working",
-      "Battery Expansion",
-      "LCD Replacement",
-    ],
-  },
-];
-
-// Helper: normalise strings for search (case-insensitive)
-function matchesSearch(tech, query) {
-  if (!query) return true;
-  const lowerQuery = query.toLowerCase();
-  return (
-    tech.workshop.toLowerCase().includes(lowerQuery) ||
-    tech.technician.toLowerCase().includes(lowerQuery) ||
-    tech.location.toLowerCase().includes(lowerQuery) ||
-    tech.phone.includes(lowerQuery) ||
-    tech.email.toLowerCase().includes(lowerQuery)
-  );
-}
-
-// Helper: filter by repair type
-function matchesRepairType(tech, repairFilterValue) {
-  if (repairFilterValue === "all") return true;
-  const filterMap = {
-    screen: [
-      "Broken Screen",
-      "Screen Replacement",
-      "Display Replacement",
-      "LCD Replacement",
-      "Screen Glass Only",
-      "Screen Ghost Touch",
-      "Back Glass Repair",
-    ],
-    battery: [
-      "Battery Replacement",
-      "Battery Draining",
-      "Battery Issues",
-      "Battery Not Charging",
-      "Battery Calibration",
-      "Battery Fix",
-      "Battery Expansion",
-      "Battery Renew",
-    ],
-    charging: [
-      "Charging Port",
-      "Charging Port Fix",
-      "USB Port",
-      "Charging Port Soldering",
-      "Charging IC",
-    ],
-    water: [
-      "Water Damage Repair",
-      "Water Damage",
-      "Water/Liquid Damage",
-      "Water Damage Cleanup",
-    ],
-    software: [
-      "Software Troubleshooting",
-      "Software Boot Loop",
-      "Software Update Issues",
-      "Software Crash",
-      "Dead Boot Repair",
-    ],
-    camera: ["Camera Repair", "Camera Issues", "Camera Blur"],
-    audio: [
-      "Speaker Replacement",
-      "Speaker Crackling",
-      "Audio Problems",
-      "Microphone Repair",
-      "Earpiece Not Working",
-    ],
-    motherboard: ["Motherboard Repair", "Motherboard Faults", "Motherboard"],
-  };
-  const keywords = filterMap[repairFilterValue] || [];
-  if (keywords.length === 0) return true;
-  return tech.repairs.some((repair) =>
-    keywords.some((keyword) =>
-      repair.toLowerCase().includes(keyword.toLowerCase()),
-    ),
-  );
-}
-
-// render the grid
-const gridContainer = document.getElementById("technicianGrid");
-const searchInput = document.getElementById("searchInput");
-const repairFilterSelect = document.getElementById("repairTypeFilter");
-
-function escapeHtml(str) {
-  return str.replace(/[&<>]/g, function (m) {
-    if (m === "&") return "&amp;";
-    if (m === "<") return "&lt;";
-    if (m === ">") return "&gt;";
-    return m;
-  });
-}
-
-function renderTechnicians() {
-  const searchTerm = searchInput.value.trim();
-  const repairFilter = repairFilterSelect.value;
-
-  const filtered = technicians.filter((tech) => {
-    return (
-      matchesSearch(tech, searchTerm) && matchesRepairType(tech, repairFilter)
-    );
-  });
-
-  if (filtered.length === 0) {
-    gridContainer.innerHTML = `<div class="no-results">🔎 No technicians found matching “${escapeHtml(searchTerm) || repairFilter}” <br> Try different keywords or reset filters.</div>`;
-    return;
-  }
-
-  let cardsHTML = "";
-  filtered.forEach((tech) => {
-    const repairTags = tech.repairs
-      .slice(0, 5)
-      .map((rep) => `<span class="repair-tag">${escapeHtml(rep)}</span>`)
-      .join("");
-    cardsHTML += `
-      <div class="tech-card">
-        <div class="card-badge">
-          <span>📱 certified</span>
-          <span>⭐ ${Math.floor(Math.random() * 2) + 4}.${Math.floor(Math.random() * 9)} (${Math.floor(Math.random() * 50) + 20} reviews)</span>
-        </div>
-        <div class="card-content">
-          <div class="workshop-name">
-            🔧 ${escapeHtml(tech.workshop)}
-          </div>
-          <div class="technician-name">
-            👤 ${escapeHtml(tech.technician)} • ${escapeHtml(tech.location)}
-          </div>
-          <div class="contact-info">
-            <div class="contact-row">
-              <span class="contact-icon">📞</span>
-              <span class="contact-detail">${escapeHtml(tech.phone)}</span>
-            </div>
-            <div class="contact-row">
-              <span class="contact-icon">✉️</span>
-              <span class="contact-detail">${escapeHtml(tech.email)}</span>
-            </div>
-            <div class="contact-row">
-              <span class="contact-icon">📍</span>
-              <span class="contact-detail">${escapeHtml(tech.location)}</span>
-            </div>
-          </div>
-          <div class="repair-list">
-            <div class="repair-title">🛠️ WHAT THEY REPAIR</div>
-            <div class="repair-types">
-              ${repairTags}
-              ${tech.repairs.length > 5 ? `<span class="repair-tag">+${tech.repairs.length - 5} more</span>` : ""}
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-  gridContainer.innerHTML = cardsHTML;
-}
-
-// event listeners
-searchInput.addEventListener("input", () => renderTechnicians());
-repairFilterSelect.addEventListener("change", () => renderTechnicians());
-
-// initial render
-renderTechnicians();

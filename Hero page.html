@@ -1,175 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/c61a0110d8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Style.css">
-    <script src="App.js" defer></script>
-    <script src="Maps.js" defer></script>
-    <title>Phone Repair</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/c61a0110d8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="Style.css" />
+  <script src="App.js" defer></script>
+  <script src="Maps.js" defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMsFCedhkLNbv-uYzjO6vxLCmgylfC0e8&libraries=places,geometry&callback=initMap"
+    async defer></script>
+  <title>Phone Repair</title>
 </head>
 
 <body>
-    <section class="heroSection">
-        <!-- Navigation -->
-        <div id="Navbar">
-            <img src="Icons/Website logo.png" id="Website-logo">
-            <span id="links">
-                <a href="#" class="link">Home</a>
-                <a href="#map-title" class="link">Map</a>
-                <a href="#Price-Estimator" class="link">Pricing</a>
-                <a href="#Contacts-section" class="link">Contact</a>
-            </span>
-        </div>
-        <!-- Hero section -->
-        <div id="heroBody">
-            <span id="heroHeading">
-                <h2>Find a mobile technician near you</h2>
-            </span>
-            <span id="heroParagraph">
-                <p>It has never been simpler to find a mobile technician near you with just a click of a button</p>
-            </span>
-            <a href="#map-title"><button id="technicianBtn">Find Technician <i
-                        class="fa-solid fa-arrow-right"></i></button></a>
-        </div>
-    </section>
-    <!-- Icon Section -->
-    <div id="image">
-        <span>
-            <img src="Icons/Phone repair icon.png" alt="Phone image">
-            <p style="margin-right: 20px;">Phones</p>
-        </span>
-        <span>
-            <img src="Icons/Tablet repair icon.png" alt="Tablet image">
-            <p>Tablets</p>
-        </span>
-        <span>
-            <img src="Icons/Laptop repair icon4.png" alt="Laptop image">
-            <p>Laptops</p>
-        </span>
+  <section class="heroSection">
+    <!-- Navigation -->
+    <div id="Navbar">
+      <img src="Icons/Website logo.png" id="Website-logo" />
+      <span id="links">
+        <a href="#" class="link">Home</a>
+        <a href="#map-section" class="link">Map</a>
+        <a href="#Price-Estimator" class="link">Pricing</a>
+        <a href="#Contacts-section" class="link">Contact</a>
+      </span>
     </div>
-    <!-- Title section -->
-    <section id="map-title">
-        <span id="maps-title">See which mobile technician is near you</span>
-    </section>
-    <!-- Maps Section -->
-    <div class="app">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <header>
-                <h1>Phone Repair Services Near You</h1>
-                <p>
-                    Find nearby repair shops, choose a search radius, and get
-                    directions.
-                </p>
-            </header>
-            <div class="controls">
-                <div class="field">
-                    <label for="radius">Search Radius</label>
-
-                    <select id="radius">
-                        <option value="1000">1 KM</option>
-                        <option value="3000" selected>3 KM</option>
-                        <option value="5000">5 KM</option>
-                        <option value="10000">10 KM</option>
-                        <option value="20000">20 KM</option>
-                    </select>
-                </div>
-
-                <button id="searchBtn">Find Nearby Services</button>
-            </div>
-
-            <div id="status" class="status">Allow location access to begin.</div>
-
-            <div id="results" class="results">
-                <div class="empty">Nearby repair shops will appear here.</div>
-            </div>
-        </aside>
-
-        <!-- Map -->
-        <section class="map-wrapper">
-            <div class="map-badge">Google Maps • Nearby Repair Services</div>
-
-            <div id="map"></div>
-        </section>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMsFCedhkLNbv-uYzjO6vxLCmgylfC0e8
-    &callback=initMap&v=weekly"></script>
+    <!-- Hero section -->
+    <div id="heroBody">
+      <span id="heroHeading">
+        <h2>Find a mobile technician near you</h2>
+      </span>
+      <span id="heroParagraph">
+        <p>
+          It has never been simpler to find a mobile technician near you with
+          just a click of a button
+        </p>
+      </span>
+      <a href="#Contacts-section"><button id="technicianBtn">
+          Find Technician <i class="fa-solid fa-arrow-right"></i></button></a>
     </div>
-    <!-- Pricing Estimater -->
-    <div id="Price-Estimator">
-        <div class="estimator-card">
-            <div class="card-header">
-                <h1>
-                    📱 Phone Repair Price Estimator
-                    <span>UGX</span>
-                </h1>
-                <p>Select brand & issue → Instant price + Estimated time</p>
-            </div>
-            <div class="card-content">
-                <div class="input-group">
-                    <label>🔧 Phone brand</label>
-                    <select id="brandSelect" aria-label="Select phone brand"></select>
-                </div>
-                <div class="input-group">
-                    <label>⚠️ What's broken?</label>
-                    <select id="issueSelect" aria-label="Select repair issue"></select>
-                </div>
+  </section>
+  <!-- Icon Section -->
+  <div id="image">
+    <span>
+      <img src="Icons/Phone repair icon.png" alt="Phone image" />
+      <p style="margin-right: 20px">Phones</p>
+    </span>
+    <span>
+      <img src="Icons/Tablet repair icon.png" alt="Tablet image" />
+      <p>Tablets</p>
+    </span>
+    <span>
+      <img src="Icons/Laptop repair icon4.png" alt="Laptop image" />
+      <p>Laptops</p>
+    </span>
+  </div>
 
-                <div class="result-panel" id="resultPanel">
-                    <div class="price-box">
-                        <span class="price-label">💰 ESTIMATED REPAIR COST</span>
-                        <span class="price-value" id="priceDisplay">— UGX</span>
-                    </div>
-                    <div class="time-box">
-                        <span class="time-label">⏱️ TURNAROUND TIME</span>
-                        <span class="time-value" id="timeDisplay">—</span>
-                    </div>
-                    <div class="note">
-                        ⚡ Note that this price may vary based on the mobile technician <br>
-                        💰 Currency: <strong>Ugandan Shillings (UGX)</strong>
-                    </div>
-                </div>
-            </div>
-            <footer>
-                🛠️ Estimates based on real repair data | Prices may vary by location & part availability
-            </footer>
+  <!-- Map Section -->
+  <section class="Map-section">
+    <div class="Mapcontainer" id="map-section">
+      <div class="sidebar">
+        <h1>📱 Nearby Phone Repair Services</h1>
+  
+        <div class="Mapcontrols">
+          <label>Search Radius (KM)</label>
+  
+          <input type="range" id="radius" min="1" max="20" value="3" />
+  
+          <span id="radiusValue">3 KM</span>
+  
+          <button id="searchBtn">Search Nearby Repairs</button>
         </div>
+  
+        <div id="repairList"></div>
+      </div>
+  
+      <div id="map"></div>
     </div>
-    <!-- Footer -->
-    <section class="Footer">
-        <div class="Footer-body">
-            <div class="Footer-content">
-                <h2>PHONE REPAIR SITE</h2>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-youtube"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-            <div class="Footer-content1">
-                <h4>Discover</h4>
-                <p>Editor's Choice</p>
-                <p>Popular Images</p>
-                <p>Popular Searches</p>
-                <p>Popular Searches</p>
-            </div>
-            <div class="Footer-content2">
-                <h4>Community</h4>
-                <p>Blog</p>
-                <p>Forum</p>
-                <p>Creators</p>
-            </div>
-            <div class="Footer-content3">
-                <h4>About</h4>
-                <p>FAQ</p>
-                <p>About Us</p>
-                <p>Privacy Policy</p>
-            </div>
+  </section>
 
-        </div>
+  <!-- Contact Section -->
+  <div class="container" id="Contacts-section">
+    <section class="hero">
+      <h1>Find Trusted Mobile Phone Technicians Who Are Not Official</h1>
+      <p>
+        Browse technician contact details, view repair services, and filter
+        technicians based on what they repair.
+      </p>
     </section>
+    <section class="controls">
+      <div class="filter-group">
+        <label for="repairFilter">Filter by repair type:</label>
 
+        <select id="repairFilter">
+          <option value="all">All Repairs</option>
+        </select>
+      </div>
+      <div class="count" id="resultCount"></div>
+    </section>
+    <section class="grid" id="technicianGrid"></section>
+  </div>
+  <!-- Pricing Estimater -->
+  <div id="Price-Estimator">
+    <div class="estimator-card">
+      <div class="card-header">
+        <h1>
+          📱 Phone Repair Price Estimator
+          <span>UGX</span>
+        </h1>
+        <p>Select brand & issue → Instant price + Estimated time</p>
+      </div>
+      <div class="card-content">
+        <div class="input-group">
+          <label>🔧 Phone brand</label>
+          <select id="brandSelect" aria-label="Select phone brand"></select>
+        </div>
+        <div class="input-group">
+          <label>⚠️ What's broken?</label>
+          <select id="issueSelect" aria-label="Select repair issue"></select>
+        </div>
+
+        <div class="result-panel" id="resultPanel">
+          <div class="price-box">
+            <span class="price-label">💰 ESTIMATED REPAIR COST</span>
+            <span class="price-value" id="priceDisplay">— UGX</span>
+          </div>
+          <div class="time-box">
+            <span class="time-label">⏱️ TURNAROUND TIME</span>
+            <span class="time-value" id="timeDisplay">—</span>
+          </div>
+          <div class="note">
+            ⚡ Note that this price may vary based on the mobile technician
+            <br />
+            💰 Currency: <strong>Ugandan Shillings (UGX)</strong>
+          </div>
+        </div>
+      </div>
+      <footer>
+        🛠️ Estimates based on real repair data | Prices may vary by location &
+        part availability
+      </footer>
+    </div>
+  </div>
+  <!-- Footer -->
+  <section class="Footer">
+    <div class="Footer-body">
+      <div class="Footer-content">
+        <h2>PHONE REPAIR SITE</h2>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <div class="Footer-content1">
+        <h4>Discover</h4>
+        <p>Editor's Choice</p>
+        <p>Popular Searches</p>
+      </div>
+      <div class="Footer-content2">
+        <h4>Community</h4>
+        <p>Blog</p>
+        <p>Forum</p>
+        <p>Creators</p>
+      </div>
+      <div class="Footer-content3">
+        <h4>About</h4>
+        <p>FAQ</p>
+        <p>About Us</p>
+        <p>Privacy Policy</p>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
