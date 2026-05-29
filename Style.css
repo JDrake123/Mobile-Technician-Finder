@@ -127,6 +127,9 @@ body{
 /* style.css */
 .Map-section{
   margin: 50px 15px 70px 15px;
+  animation: fadeInUp linear both;
+  animation-timeline: view();
+  animation-range: entry 10% contain 40%;
 }
 .Mapcontainer{
   display:flex;
@@ -246,6 +249,9 @@ body{
     text-align: center;
     margin-bottom: 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp linear both;
+    animation-timeline: view();
+    animation-range: entry 10% contain 40%;
 }
 .hero h1 {
     font-size: 2rem;
@@ -270,6 +276,9 @@ body{
     flex-wrap: wrap;
     gap: 15px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    animation: fadeInUp linear both;
+    animation-timeline: view();
+    animation-range: entry 10% contain 40%;
 }
 .filter-group {
     display: flex;
@@ -302,6 +311,9 @@ select {
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
+    animation: fadeInUp linear both;
+    animation-timeline: view();
+    animation-range: entry 10% contain 40%;
 }
 .card:hover {
     transform: translateY(-5px);
@@ -347,7 +359,16 @@ select {
     color: #6b7280;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
-
+@keyframes fadeInUp{
+    from{
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
 @media (max-width: 600px) {
     .controls {
         flex-direction: column;
@@ -380,6 +401,9 @@ select {
   box-shadow: 2px 4px 8px grey;
   overflow: hidden;
   transition: transform 0.2s ease;
+  animation: fadeInUp linear both;
+  animation-timeline: view();
+  animation-range: entry 10% contain 40%;
 }
 
 .estimator-card:hover {
@@ -534,6 +558,16 @@ footer {
   color: #5a6e7a;
   border-top: 1px solid #e2edf2;
 }
+@keyframes fadeInUp{
+    from{
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
 
 @media (max-width: 550px) {
   .card-content {
@@ -557,6 +591,9 @@ footer {
 }
 .Footer-body{
     font-family: Inter;
+    animation: fadeInUp linear both;
+    animation-timeline: view();
+    animation-range: entry 10% contain 40%;
 }
 .Footer-content h2{
     font-size: 15px;
