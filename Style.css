@@ -586,18 +586,15 @@ footer {
 /* Footer */
 .Footer{
     padding: 50px 100px 50px 100px;
-    background-color: #296679;
+    background-color: #0390b8;
     font-family: Inter;
 }
 .Footer-body{
     font-family: Inter;
-    animation: fadeInUp linear both;
-    animation-timeline: view();
-    animation-range: entry 10% contain 40%;
 }
 .Footer-content h2{
     font-size: 15px;
-    font-family: "Edu NSW ACT Cursive";
+    font-family: "Inter";
     margin-bottom: 100px;
 }
 .Footer-body{
@@ -627,27 +624,27 @@ footer {
 }
 .Footer-content1 p{
     font-size: 15px;
-    color: grey;
+    color: white;
 }
 .Footer-content2 p{
     font-size: 15px;
-    color: grey;
+    color: white;
 }
 .Footer-content3 p{
     font-size: 15px;
-    color: grey;
+    color: white;
 }
 .Footer-content1 p:hover{
-     color: white;
+     font-weight: 500;
      cursor: pointer;
      
 }
 .Footer-content2 p:hover{
-     color: white;
+     font-weight: 500;
      cursor: pointer;
 
 }
 .Footer-content3 p:hover{
-     color: white;
+     font-weight: 500;
      cursor: pointer;
 }
